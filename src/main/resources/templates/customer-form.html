@@ -1,0 +1,21 @@
+<!-- customer-form.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Form</title>
+</head>
+<body>
+<h2>Customer Form</h2>
+<form th:action="@{/customers/new}" th:object="${customer}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Name: <input type="text" th:field="*{name}" /></label><br/>
+    <label>Age: <input type="number" th:field="*{age}" /></label><br/>
+    <label>Address: <input type="text" th:field="*{address}" /></label><br/>
+    <button type="submit">Save</button>
+</form>
+<a th:href="@{/customers}">Cancel</a>
+</body>
+</html>

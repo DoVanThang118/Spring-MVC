@@ -1,0 +1,17 @@
+<!-- customer-detail.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Detail</title>
+</head>
+<body>
+<h2>Customer Detail</h2>
+<p th:if="${customer != null}">
+    <span th:text="${customer.name + ' ' + customer.age+ ' ' + customer.address}"></span>
+</p>
+<a th:href="@{/customers}">Back to List</a>
+</body>
+</html>
