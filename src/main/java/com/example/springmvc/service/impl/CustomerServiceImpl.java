@@ -4,6 +4,8 @@ import com.example.springmvc.entity.Customer;
 import com.example.springmvc.repository.CustomerRepository;
 import com.example.springmvc.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +33,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Customer> get() {
-        return customerRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+    public List<Customer> getAll() {
+        return customerRepository.findAll();
+    }
+
+    @Override
+    public Page<Customer> getCustomers(Pageable pageable, String name, Integer age, String address, List<String> number) {
+            return customerRepository.findCustomers( pageable,  name,  age,  address,  number);
+//        return customerRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     @Override
@@ -47,4 +55,6 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("Database error. Can't delete user");
         }
     }
+
+
 }
