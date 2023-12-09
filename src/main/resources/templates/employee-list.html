@@ -46,7 +46,6 @@
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Wage</th>
-<!--            <th scope="col">Action</th>-->
         </tr>
         </thead>
         <tbody>
@@ -54,19 +53,6 @@
             <td scope="row" th:text="${employee.id}"></td>
             <td th:text="${employee.name}"></td>
             <td th:text="${employee.wage}"></td>
-<!--            <td>-->
-<!--                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">-->
-<!--                    <div class="btn-group me-2" role="group" aria-label="First group">-->
-<!--                        <a class="btn btn-info" role="button" th:href="@{/employees/{id}(id=${employee.id})}">View</a>-->
-<!--                    </div>-->
-<!--                    <div class="btn-group me-2" role="group" aria-label="Second group">-->
-<!--                        <a class="btn btn-warning" role="button" th:href="@{/employees/edit/{id}(id=${employee.id})}">Edit</a>-->
-<!--                    </div>-->
-<!--                    <div class="btn-group" role="group" aria-label="Third group">-->
-<!--                        <a class="btn btn-danger" role="button" th:href="@{/employees/delete/{id}(id=${employee.id})}">Delete</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </td>-->
         </tr>
         </tbody>
     </table>
